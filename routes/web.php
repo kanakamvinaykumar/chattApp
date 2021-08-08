@@ -97,9 +97,9 @@ Route::group(['middleware' => ['user.activated', 'auth']], function () {
 
 
 
- // Route::get('/', function () {
- //        return view('index');
- //    });
+ Route::get('/', function () {
+        return view('index');
+    });
 
 
 
