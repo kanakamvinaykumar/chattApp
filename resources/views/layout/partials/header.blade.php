@@ -268,7 +268,14 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile">My Profile</a>
                         <a class="dropdown-item" href="settings">Settings</a>
-                        <a class="dropdown-item" href="login">Logout</a>
+               <a class="dropdown-item" class="btn btn-default btn-flat" style="cursor:pointer;"
+                   onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                   {{ __('messages.logout') }}
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+
                     </div>
                 </li>
             </ul>
@@ -280,7 +287,14 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="profile">My Profile</a>
                     <a class="dropdown-item" href="settings">Settings</a>
-                    <a class="dropdown-item" href="login">Logout</a>
+                                       <a class="dropdown-item" class="btn btn-default btn-flat" style="cursor:pointer;"
+                   onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                   {{ __('messages.logout') }}
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+
                 </div>
             </div>
             <!-- /Mobile Menu -->

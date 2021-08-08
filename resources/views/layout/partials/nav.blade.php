@@ -1,6 +1,7 @@
 <div class="main-wrapper">
 <div class="sidebar" id="sidebar">
-                <div class="sidebar-inner slimscroll">
+                <div class="sidebar-inner slimscroll" style="overflow: scroll;
+    height: 100%;">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li class="menu-title"> 

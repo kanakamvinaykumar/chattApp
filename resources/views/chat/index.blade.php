@@ -15,6 +15,7 @@
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
         
         <!-- Fontawesome CSS -->
         <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -46,7 +47,6 @@
         <!-- Main CSS -->
         <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
     <!-- <link rel="stylesheet" href="assets/css/coreui.min.css') }}"> -->
     <link rel="stylesheet" href="assets/icheck/skins/all.css">
@@ -73,7 +73,8 @@
 
 <div class="main-wrapper">
 <div class="sidebar" id="sidebar">
-                <div class="sidebar-inner slimscroll">
+                <div class="sidebar-inner slimscroll" style="overflow: scroll;
+    height: 100%;">
                     <div id="sidebar-menu" class="sidebar-menu">
                         <ul>
                             <li class="menu-title"> 
@@ -447,7 +448,14 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile">My Profile</a>
                         <a class="dropdown-item" href="settings">Settings</a>
-                        <a class="dropdown-item" href="login">Logout</a>
+                                       <a class="dropdown-item" class="btn btn-default btn-flat" style="cursor:pointer;"
+                   onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                   {{ __('messages.logout') }}
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+
                     </div>
                 </li>
             </ul>
@@ -459,7 +467,14 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="profile">My Profile</a>
                     <a class="dropdown-item" href="settings">Settings</a>
-                    <a class="dropdown-item" href="login">Logout</a>
+                                       <a class="dropdown-item" class="btn btn-default btn-flat" style="cursor:pointer;"
+                   onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                   {{ __('messages.logout') }}
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+
                 </div>
             </div>
             <!-- /Mobile Menu -->
